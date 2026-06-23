@@ -27,15 +27,17 @@ _link() {
 
 echo "==> Linking dotfiles from $DOTFILES"
 
-_link "$DOTFILES/.zshrc"          "$HOME/.zshrc"
+_link "$DOTFILES/.zshrc"           "$HOME/.zshrc"
 _link "$DOTFILES/.zsh_plugins.txt" "$HOME/.zsh_plugins.txt"
-_link "$DOTFILES/starship.toml"    "$HOME/.config/starship.toml"
+_link "$DOTFILES/starship.toml"     "$HOME/.config/starship.toml"
+_link "$DOTFILES/.gitconfig"        "$HOME/.gitconfig"
+_link "$DOTFILES/.vimrc"            "$HOME/.vimrc"
 
 echo ""
 echo "==> Done."
 echo ""
 echo "Next steps on a new machine:"
 echo "  1. Install Homebrew: https://brew.sh"
-echo "  2. brew install antidote fzf fnm starship"
-echo "  3. Paste your ~/.zshenv from Slack DM (or decrypt from secure store)"
+echo "  2. brew install antidote fzf forgit fnm starship git-delta"
+echo "  3. Paste your ~/.zshenv from secure store"
 echo "     → Use .zshenv.template as a reference for required variables."

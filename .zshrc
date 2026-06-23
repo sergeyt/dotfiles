@@ -25,6 +25,14 @@ compinit -C -d "$ZSH_COMPDUMP"
 # --- fzf integration ---
 eval "$(fzf --zsh)"
 
+# --- forgit (fzf git UI) ---
+export FORGIT_CHECKOUT_BRANCH_BRANCH_GIT_OPTS='--sort=-committerdate'
+if [[ -f /opt/homebrew/opt/forgit/share/forgit/forgit.plugin.zsh ]]; then
+  source /opt/homebrew/opt/forgit/share/forgit/forgit.plugin.zsh
+elif [[ -f /usr/local/opt/forgit/share/forgit/forgit.plugin.zsh ]]; then
+  source /usr/local/opt/forgit/share/forgit/forgit.plugin.zsh
+fi
+
 # --- fnm (Node) ---
 eval "$(fnm env --use-on-cd)"
 
@@ -49,28 +57,7 @@ if [[ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]]; then
 fi
 
 # bun completions
-[[ -s "/Users/sergeyt/.bun/_bun" ]] && source "/Users/sergeyt/.bun/_bun"
-
-# --- conda (lazy-load) ---
-CONDA_ROOT="/opt/homebrew/Caskroom/miniconda/base"
-
-_conda_lazy() {
-  unset -f conda _conda_lazy
-
-  if [[ -f "${CONDA_ROOT}/etc/profile.d/conda.sh" ]]; then
-    source "${CONDA_ROOT}/etc/profile.d/conda.sh"
-  else
-    export PATH="${CONDA_ROOT}/bin:$PATH"
-  fi
-
-  command conda "$@"
-}
-
-# Only install wrapper if conda exists
-if [[ -x "${CONDA_ROOT}/bin/conda" ]] || command -v conda &>/dev/null; then
-  conda() { _conda_lazy "$@"; }
-fi
-# --- end conda init ---
+[[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
 
 # ngrok completion
 if command -v ngrok &>/dev/null; then
@@ -113,7 +100,6 @@ add-zsh-hook preexec __timer_preexec
 add-zsh-hook precmd  __timer_precmd
 
 # print "Shell startup took $(printf "%.3f" "$(echo "$EPOCHREALTIME - $__start" | bc)") seconds"
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
-# Added by Windsurf
-export PATH="/Users/sergeyt/.codeium/windsurf/bin:$PATH"
+# Windsurf
+[[ -d "$HOME/.codeium/windsurf/bin" ]] && export PATH="$HOME/.codeium/windsurf/bin:$PATH"

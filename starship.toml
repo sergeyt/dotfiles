@@ -1,14 +1,11 @@
 add_newline = false
 
-# dir, (conda), git branch, prompt char
-format = "$directory$conda$git_branch$character"
+# dir, git branch, prompt char
+format = "$directory$git_branch$character"
 
 [directory]
 truncate_to_repo = true
 truncation_length = 3
-
-[conda]
-format = " [$environment]($style)"
 
 [git_branch]
 format = " [$branch]($style)"

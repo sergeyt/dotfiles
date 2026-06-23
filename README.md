@@ -1,6 +1,6 @@
-# dotfiles
+# .files
 
-Personal zsh setup for macOS.
+Personal config files for macOS — shell, git, vim, and related tools.
 
 ## What's tracked
 
@@ -9,6 +9,8 @@ Personal zsh setup for macOS.
 | `.zshrc` | `~/.zshrc` | Main shell config |
 | `.zsh_plugins.txt` | `~/.zsh_plugins.txt` | Antidote plugin list |
 | `starship.toml` | `~/.config/starship.toml` | Prompt config |
+| `.gitconfig` | `~/.gitconfig` | Git config (delta pager, etc.) |
+| `.vimrc` | `~/.vimrc` | Vim config |
 | `.zshenv.template` | reference only | Variable list with placeholders |
 
 ## What's NOT tracked
@@ -20,16 +22,16 @@ Personal zsh setup for macOS.
 
 ```zsh
 # 1. Clone
-git clone <this-repo-url> ~/dotfiles
+git clone https://github.com/sergeyt/.files.git ~/dotfiles
 
 # 2. Symlink
 cd ~/dotfiles && ./install.sh
 
 # 3. Install tools
-brew install antidote fzf fnm starship
+brew install antidote fzf forgit fnm starship git-delta
 
 # 4. Restore secrets
-# Copy ~/.zshenv from your Slack DM / secure store
+# Copy ~/.zshenv from your secure store
 # Use .zshenv.template as a reference
 ```
 
@@ -37,6 +39,7 @@ brew install antidote fzf fnm starship
 
 - **antidote** — zsh plugin manager (`brew install antidote`)
 - **fzf** — fuzzy finder
+- **forgit** — interactive git commands via fzf (`gcb`, `ga`, `gd`, `glo`, …)
 - **fnm** — fast Node version manager
 - **starship** — cross-shell prompt
-- **miniconda** — Python env (optional)
+- **git-delta** — syntax-highlighting pager for git diffs

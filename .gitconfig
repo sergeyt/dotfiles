@@ -1,0 +1,25 @@
+[user]
+	name = Sergey Todyshev
+	email = stodyshev@gmail.com
+[push]
+	autoSetupRemote = true
+
+[core]
+    pager = delta
+	autocrlf = input
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
