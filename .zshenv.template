@@ -1,0 +1,68 @@
+# Copy this to ~/.zshenv and fill in real values.
+# Transfer the actual ~/.zshenv securely (e.g. Slack DM to yourself).
+
+# --- npm ---
+export NPM_TOKEN=<YOUR_NPM_TOKEN>
+
+# --- Node ---
+export NODE_OPTIONS=--max-old-space-size=8192
+
+# --- MongoDB ---
+export MONGO_DEV=mongodb+srv://<user>:<password>@<host>/
+export MONGO_PROD=mongodb+srv://<user>:<password>@<host>/
+
+# --- AWS CodeBuild (CI mock env) ---
+export CODEBUILD_BUILD_SUCCEEDING=0
+export CODEBUILD_BUILD_URL="https://us-east-1.console.aws.amazon.com/codesuite/codebuild/<account_id>"
+export CODEBUILD_BUILD_NUMBER=111
+
+# --- GitHub ---
+export GITHUB_API_URL="https://api.github.com"
+export GITHUB_TOKEN=<YOUR_GITHUB_TOKEN>
+export GITHUB_REPO=<org/repo>
+export GITHUB_USERNAME=<your_github_username>
+export GITHUB_PR_NUMBER=<pr_number>
+export GITHUB_SHA=<sha>
+export GITHUB_APP_ID=<app_id>
+export GITHUB_APP_INSTALLATION_ID=<installation_id>
+
+# --- Slack (CI bot) ---
+# export SLACK_TOKEN=<YOUR_SLACK_TOKEN>
+
+# --- Java / Spirent paths (machine-specific) ---
+export JAVA_HOME=<path_to_jdk>
+export SPIRENT_DIR=<path_to_spirent_projects>
+export VELOCITY_REPOS_DIR=$SPIRENT_DIR
+export ILO_PROJECT_DIR=$SPIRENT_DIR/velocity-app
+export JBOSS_HOME=$SPIRENT_DIR/local/wildfly
+
+# --- GitLab ---
+export GITLAB_TOKEN=<YOUR_GITLAB_TOKEN>
+export GITLAB_PROJECT_ID=
+export GITLAB_TOKEN_FOR_CR=$GITLAB_TOKEN
+
+# --- Jenkins ---
+export JENKINS_URL=https://jenkins-ito.spirenteng.com/jenkins
+export JENKINS_USER=<your_jenkins_username>
+export JENKINS_TOKEN=<YOUR_JENKINS_TOKEN>
+
+# --- BlackDuck ---
+export BLACKDUCK_TOKEN=<YOUR_BLACKDUCK_TOKEN>
+
+# --- Velocity host (pick one) ---
+export VELOCITY_HOST=<hostname>
+
+# --- Velocity Slack token ---
+export VELOCITY_SLACK_TOKEN=<YOUR_VELOCITY_SLACK_TOKEN>
+
+# --- vCenter ---
+export VCENTER_HOST=vcenter.lwd.spirenteng.com
+export VCENTER_USERNAME=<your_vcenter_user>
+export VCENTER_PASSWORD=<YOUR_VCENTER_PASSWORD>
+
+# --- Jira ---
+export JIRA_EMAIL=<your_jira_email>
+export JIRA_URL=https://keysight-spirent.atlassian.net
+export JIRA_TOKEN=<YOUR_JIRA_TOKEN>
+export JIRA_TOKEN_FOR_CR=$JIRA_TOKEN
+export JIRA_EMAIL_FOR_CR=$JIRA_EMAIL

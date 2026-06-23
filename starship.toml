@@ -1,0 +1,19 @@
+add_newline = false
+
+# dir, git branch, prompt char
+format = "$directory$git_branch$character"
+
+[directory]
+truncate_to_repo = true
+truncation_length = 3
+
+[git_branch]
+format = " [$branch]($style)"
+only_attached = true
+
+[git_status]
+disabled = true
+
+[character]
+success_symbol = "❯ "
+error_symbol = "❯ "
