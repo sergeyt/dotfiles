@@ -7,24 +7,10 @@ export NPM_TOKEN=<YOUR_NPM_TOKEN>
 # --- Node ---
 export NODE_OPTIONS=--max-old-space-size=8192
 
-# --- MongoDB ---
-export MONGO_DEV=mongodb+srv://<user>:<password>@<host>/
-export MONGO_PROD=mongodb+srv://<user>:<password>@<host>/
-
 # --- AWS CodeBuild (CI mock env) ---
 export CODEBUILD_BUILD_SUCCEEDING=0
 export CODEBUILD_BUILD_URL="https://us-east-1.console.aws.amazon.com/codesuite/codebuild/<account_id>"
 export CODEBUILD_BUILD_NUMBER=111
-
-# --- GitHub ---
-export GITHUB_API_URL="https://api.github.com"
-export GITHUB_TOKEN=<YOUR_GITHUB_TOKEN>
-export GITHUB_REPO=<org/repo>
-export GITHUB_USERNAME=<your_github_username>
-export GITHUB_PR_NUMBER=<pr_number>
-export GITHUB_SHA=<sha>
-export GITHUB_APP_ID=<app_id>
-export GITHUB_APP_INSTALLATION_ID=<installation_id>
 
 # --- Slack (CI bot) ---
 # export SLACK_TOKEN=<YOUR_SLACK_TOKEN>
